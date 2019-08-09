@@ -9,9 +9,13 @@
 Thinkphp使用Alipay转账Tool封装的使用说明
 
 1，将根目录的  alipay文件夹  复制至Thinkphp的 /thinkphp/library/think 目录中
+
 2，将根目录文件  alipay_tool.php  复制至Thinkphp的 /application/模块目录/controller 目录中
+
 3，配置支付宝参数值config.php
-   参数有//支付宝配置
+   
+    参数有//支付宝配置
+    
     'alipay'                 =>[
             'gatewayUrl'         => '网关',
             'appId'              => '商户id',
@@ -22,9 +26,14 @@ Thinkphp使用Alipay转账Tool封装的使用说明
             'postCharset'        => '编码\UTF-8',
             'format'             => '数据类型\json',
     ],
+
+
 4,在自己的controller使用此tool
-  头部加use app\admin\controller\alipay_tool;
-  function中
+  
+     头部加use app\admin\controller\alipay_tool;
+  
+     function中
+    
      定义转账参数
         $data=array(
             "out_biz_no" => "314112224412332",
