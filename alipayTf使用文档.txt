@@ -5,39 +5,44 @@
  * Time: 10:09
  */
 
-ThinkphpÊ¹ÓÃAlipay×ªÕËTool·â×°µÄÊ¹ÓÃËµÃ÷
+Thinkphpä½¿ç”¨Alipayè½¬è´¦Toolå°è£…çš„ä½¿ç”¨è¯´æ˜
 
-1£¬½«¸ùÄ¿Â¼µÄ  alipayÎÄ¼ş¼Ğ  ¸´ÖÆÖÁThinkphpµÄ /thinkphp/library/think Ä¿Â¼ÖĞ
-2£¬½«¸ùÄ¿Â¼ÎÄ¼ş  alipay_tool.php  ¸´ÖÆÖÁThinkphpµÄ /application/Ä£¿éÄ¿Â¼/controller Ä¿Â¼ÖĞ
-3£¬ÅäÖÃÖ§¸¶±¦²ÎÊıÖµconfig.php
-   ²ÎÊıÓĞ//Ö§¸¶±¦ÅäÖÃ
+1ï¼Œå°†æ ¹ç›®å½•çš„  alipayæ–‡ä»¶å¤¹  å¤åˆ¶è‡³Thinkphpçš„ /thinkphp/library/think ç›®å½•ä¸­
+
+2ï¼Œå°†æ ¹ç›®å½•æ–‡ä»¶  alipay_tool.php  å¤åˆ¶è‡³Thinkphpçš„ /application/æ¨¡å—ç›®å½•/controller ç›®å½•ä¸­
+
+3ï¼Œé…ç½®æ”¯ä»˜å®å‚æ•°å€¼config.php
+   å‚æ•°æœ‰//æ”¯ä»˜å®é…ç½®
     'alipay'                 =>[
-            'gatewayUrl'         => 'Íø¹Ø',
-            'appId'              => 'ÉÌ»§id',
-            'rsaPrivateKey'      => '×Ô¼ºË½Ô¿',
-            'alipayrsaPublicKey' => 'Ö§¸¶±¦¹«Ô¿',
-            'apiVersion'         => 'api°æ±¾\1.0',
-            'signType'           => 'signÀàĞÍ\RSA2',
-            'postCharset'        => '±àÂë\UTF-8',
-            'format'             => 'Êı¾İÀàĞÍ\json',
+            'gatewayUrl'         => 'ç½‘å…³',
+            'appId'              => 'å•†æˆ·id',
+            'rsaPrivateKey'      => 'è‡ªå·±ç§é’¥',
+            'alipayrsaPublicKey' => 'æ”¯ä»˜å®å…¬é’¥',
+            'apiVersion'         => 'apiç‰ˆæœ¬\1.0',
+            'signType'           => 'signç±»å‹\RSA2',
+            'postCharset'        => 'ç¼–ç \UTF-8',
+            'format'             => 'æ•°æ®ç±»å‹\json',
     ],
-4,ÔÚ×Ô¼ºµÄcontrollerÊ¹ÓÃ´Ëtool
-  Í·²¿¼Óuse app\admin\controller\alipay_tool;
-  functionÖĞ
-     ¶¨Òå×ªÕË²ÎÊı
+    
+4,åœ¨è‡ªå·±çš„controllerä½¿ç”¨æ­¤tool
+
+  å¤´éƒ¨åŠ use app\admin\controller\alipay_tool;
+  
+  functionä¸­
+     å®šä¹‰è½¬è´¦å‚æ•°
         $data=array(
             "out_biz_no" => "314112224412332",
             "payee_type"=> "ALIPAY_LOGONID",
-            "payee_account"=> "ÕËºÅ",
-            "amount"=> "Ç®",
-            "payer_show_name"=> "ÉÏº£½»Í¨¿¨ÍË¿î",
-            "payee_real_name"=> "É³Ïä»·¾³",
-            "remark"=> "×ªÕË±¸×¢"
+            "payee_account"=> "è´¦å·",
+            "amount"=> "é’±",
+            "payer_show_name"=> "ä¸Šæµ·äº¤é€šå¡é€€æ¬¾",
+            "payee_real_name"=> "æ²™ç®±ç¯å¢ƒ",
+            "remark"=> "è½¬è´¦å¤‡æ³¨"
         );
-        new ¶ÔÏó
+        new å¯¹è±¡
         $alipay_tool = new alipay_tool();
-        Ê¹ÓÃnewºóµÄalipayTffunction
+        ä½¿ç”¨newåçš„alipayTffunction
         $returnData = $alipay_tool->alipayTf($data);
 
 
-/**±¾ToolÎª×Ô¼ºÊ¹ÓÃÊ±·â×°£¬ÈçÓĞbugÇë¼°Ê±·´À¡¡£ÁªÏµemail£ºsunjingjie@yeah.net*/
+/**æœ¬Toolä¸ºè‡ªå·±ä½¿ç”¨æ—¶å°è£…ï¼Œå¦‚æœ‰bugè¯·åŠæ—¶åé¦ˆã€‚è”ç³»emailï¼šsunjingjie@yeah.net*/
