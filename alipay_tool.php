@@ -38,7 +38,7 @@ class alipay_tool {
                     'code'=>$resultCode,
                     'msg'=>$result->$responseNode->sub_msg,
                     'order_id'=>'',
-                    'out_biz_no'=>$result->$responseNode->out_biz_no,
+                    'out_biz_no'=>$out['out_biz_no'],
                     'pay_date'=>date('Y-m-d H:i:s',time())
                 );
             }
